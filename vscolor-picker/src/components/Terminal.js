@@ -4,6 +4,7 @@ import "./Terminal.css";
 export default class Terminal extends Component {
     render() {
         let props = this.props;
+        console.log(props)
         return (
             <div id="Terminal">
                 <div className="Terminal">

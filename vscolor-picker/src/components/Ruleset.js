@@ -92,6 +92,7 @@ export default class Ruleset extends Component {
             }
         }
         this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleColorChange = this.handleColorChange.bind(this);
     }
 
     handleInputChange(event) {
@@ -104,11 +105,19 @@ export default class Ruleset extends Component {
         });
     }
 
+    handleColorChange(event) {
+        const target = event.target;
+        const value = target.value;
+        const name = target.name;
+        const newState = { ...this.state.colors, [name]: value}
+        this.setState({ colors: newState});
+    }
+
     render() {
         return (
             <div id="Ruleset-Terminal">
                 <div className="Ruleset">
-                    <form>
+                    <form className="rule-form">
                         <label>
                             Name:
                             <input 
@@ -120,9 +129,9 @@ export default class Ruleset extends Component {
                                 <label key={rule}>
                                 {rule}:
                                 <input 
-                                    type="text"
+                                    type="color"
                                     name={rule}
-                                    onChange={this.handleInputChange}/> {/* rule is equal to the rule in state*/}
+                                    onChange={this.handleColorChange}/> {/* rule is equal to the rule in state*/}
                                 </label>
                         ))}
                     </form>
