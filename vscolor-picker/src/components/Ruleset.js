@@ -119,19 +119,18 @@ export default class Ruleset extends Component {
                 <div className="Ruleset">
                     <form className="rule-form">
                         <label>
-                            Name:
-                            <input 
+                            Name: <input 
                             type="text"
                             name="name"
                             onChange={this.handleInputChange}/>
                         </label>
                         {Object.keys(this.state.colors).map(rule => (
                                 <label key={rule}>
-                                {rule}:
-                                <input 
+                                {rule}: <input 
                                     type="color"
                                     name={rule}
-                                    onChange={this.handleColorChange}/> {/* rule is equal to the rule in state*/}
+                                    onChange={this.handleColorChange}
+                                    className="label-clr"/> {/* rule is equal to the rule in state*/}
                                 </label>
                         ))}
                     </form>

@@ -1,10 +1,27 @@
 .rule-form {
     width: 400px;
-    border: 3px solid red;
     margin: 2rem auto;
     padding:2rem;
 }
 
 label {
     display:block;
+}
+
+/* input.label-clr {
+    width:10%;
+    border-radius:3px;
+    height:1rem;
+} */
+
+button {
+    width:100%;
+}
+
+input[type="color"] {
+	-webkit-appearance: none;
+	width: 32px;
+    height: 32px;
+    border: none;
+    border-radius:25%;
 }
